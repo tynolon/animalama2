@@ -63,6 +63,7 @@ var banner = {
 
 // General
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
+var gulp = require('gulp');
 var del = require('del');
 var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
