@@ -76,6 +76,7 @@ var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var uglify = require('gulp-terser');
 var optimizejs = require('gulp-optimize-js');
+var deploy = require('gulp-gh-pages');
 
 // Styles
 var sass = require('gulp-sass');
@@ -93,6 +94,11 @@ var browserSync = require('browser-sync');
 /**
  * Gulp Tasks
  */
+
+gulp.task('deploy', function() {
+	return gulp.src("./dist/**/*")
+		.pipe(deploy())
+});
 
 // Remove pre-existing content from output folders
 var cleanDist = function (done) {
